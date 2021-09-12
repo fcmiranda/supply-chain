@@ -2,10 +2,15 @@
 
 ### Libraries
 node v12.14.1
+
 truffle-assertions was used for testing events
+
 truffle-hdwallet-provider was used for being able to deploy using infura + truffle
+
 Solidity v0.5.16 (solc-js) was used to develop smart contracts
+
 truffle v5.4.8 (core: 5.4.8) was used to provide a development env, testing framework, and asset pipeline for Ethereum.
+
 web3.js v1.5.2 was used to interact with a ethereum node using HTTP, IPC or WebSocket.
 
 ### Running the tests
