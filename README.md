@@ -16,10 +16,11 @@ web3.js v1.5.2 was used to interact with a ethereum node using HTTP, IPC or WebS
 ### Running the tests
 1) Change directories into the project-6 folder
 2) Launch Ganache `ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"`
-3) Compile smart contracts `truffle compile`
-4) Migrate smart contracts `truffle migrate` 
-5) Test smart contracts `truffle test`
-6) You will see it compile the contracts and then run the associated unit tests. There will be 10 passing tests.
+3) In another terminal run the following commands
+4) Compile smart contracts `truffle compile`
+5) Migrate smart contracts `truffle migrate` 
+6) Test smart contracts `truffle test`
+7) You will see it compile the contracts and then run the associated unit tests. There will be 10 passing tests.
 
 ![truffle test](images/truffle_test.png)
 
