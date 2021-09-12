@@ -1,112 +1,66 @@
-# Supply chain & data auditing
+# Read.me
 
-This repository containts an Ethereum DApp that demonstrates a Supply Chain flow between a Seller and Buyer. The user story is similar to any commonly used supply chain process. A Seller can add items to the inventory system stored in the blockchain. A Buyer can purchase such items from the inventory system. Additionally a Seller can mark an item as Shipped, and similarly a Buyer can mark an item as Received.
+### Libraries
+node v12.14.1
+truffle-assertions was used for testing events
+truffle-hdwallet-provider was used for being able to deploy using infura + truffle
+Solidity v0.5.16 (solc-js) was used to develop smart contracts
+truffle v5.4.8 (core: 5.4.8) was used to provide a development env, testing framework, and asset pipeline for Ethereum.
+web3.js v1.5.2 was used to interact with a ethereum node using HTTP, IPC or WebSocket.
 
-The DApp User Interface when running should look like...
-
-![truffle test](images/ftc_product_overview.png)
-
-![truffle test](images/ftc_farm_details.png)
-
-![truffle test](images/ftc_product_details.png)
-
-![truffle test](images/ftc_transaction_history.png)
-
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-Please make sure you've already installed ganache-cli, Truffle and enabled MetaMask extension in your browser.
-
-```
-Give examples (to be clarified)
-```
-
-### Installing
-
-> The starter code is written for **Solidity v0.4.24**. At the time of writing, the current Truffle v5 comes with Solidity v0.5 that requires function *mutability* and *visibility* to be specified (please refer to Solidity [documentation](https://docs.soliditylang.org/en/v0.5.0/050-breaking-changes.html) for more details). To use this starter code, please run `npm i -g truffle@4.1.14` to install Truffle v4 with Solidity v0.4.24. 
-
-A step by step series of examples that tell you have to get a development env running
-
-Clone this repository:
-
-```
-git clone https://github.com/udacity/nd1309/tree/master/course-5/project-6
-```
-
-Change directory to ```project-6``` folder and install all requisite npm packages (as listed in ```package.json```):
-
-```
-cd project-6
-npm install
-```
-
-Launch Ganache:
-
-```
-ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"
-```
-
-Your terminal should look something like this:
-
-![truffle test](images/ganache-cli.png)
-
-In a separate terminal window, Compile smart contracts:
-
-```
-truffle compile
-```
-
-Your terminal should look something like this:
-
-![truffle test](images/truffle_compile.png)
-
-This will create the smart contract artifacts in folder ```build\contracts```.
-
-Migrate smart contracts to the locally running blockchain, ganache-cli:
-
-```
-truffle migrate
-```
-
-Your terminal should look something like this:
-
-![truffle test](images/truffle_migrate.png)
-
-Test smart contracts:
-
-```
-truffle test
-```
-
-All 10 tests should pass.
+### Running the tests
+1) Change directories into the project-6 folder
+2) In the terminal run  `truffle develop`
+3) The terminal will display `truffle(develop)>`
+4) at that prompt enter `test` 
+5) You will see it compile the contracts and then run the associated unit tests. There will be 10 passing tests.
 
 ![truffle test](images/truffle_test.png)
 
-In a separate terminal window, launch the DApp:
+### Running the front end
+1) Change directories into the project-6 folder
+2) In one terminal run  `truffle develop`
+3) In metamask ensure you have a connection to truffles server on port 9545
+4) Import one of the private keys to setup metamask with an account that has eth
+5) In another terminal run `npm run dev`
+6) The local UI will display (if not navigate to `localhost:3000`)
 
-```
-npm run dev
-```
+### UML
+Located in UML folder
 
-## Built With
+### Contract Address
 
-* [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
-* [IPFS](https://ipfs.io/) - IPFS is the Distributed Web | A peer-to-peer hypermedia protocol
-to make the web faster, safer, and more open.
-* [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
+![truffle test](images/truffle_migrate.png)
 
+[contract address is 0x120c0e9304479f4d8ee916e9a509e45f17fb1014b3f308d51542dda1468d8196](https://rinkeby.etherscan.io/tx/0x120c0e9304479f4d8ee916e9a509e45f17fb1014b3f308d51542dda1468d8196)
 
-## Authors
+### Full prompt
 
-See also the list of [contributors](https://github.com/your/project/contributors.md) who participated in this project.
-
-## Acknowledgments
-
-* Solidity
-* Ganache-cli
-* Truffle
-* IPFS
+`
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0xfa43d662f383a16ff90584b9a437fa4d75191243f93fa2a8eaad93faeb701077
+  Migrations: 0x5f88d83e7996cca0fb0478c60cf5de05809dae1c
+Saving successful migration to network...
+  ... 0x9195494af5f33a1485e90822730ca0202bde92eeac13197f9b4c92355b195b82
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Deploying FarmerRole...
+  ... 0x293bfa38fde5c1743f2a09249839c2fb13c93a19855c4ba474a13b36fee8ae70
+  FarmerRole: 0x61b69311282efa5a0e000d7eb4e606a2075d4ff5
+  Deploying DistributorRole...
+  ... 0x2b1a0fd2c179e8ba39031f8e16b39d020d89cac4a3e221c543f0687162c4809c
+  DistributorRole: 0xd972b4cf06293f5f7655377baacb8c6d7fb7fd00
+  Deploying RetailerRole...
+  ... 0xe48e68e78e6c98abecc8832b2f26540cfa24903025d2316fa4e8669b64cd3371
+  RetailerRole: 0x3feaa3762a3e76debd88d5edef4167b8f99f7fb5
+  Deploying ConsumerRole...
+  ... 0xd5b5def8379e175276752e42b8339b7625bed63ecb0e9d2979c1369f7d32259e
+  ConsumerRole: 0x49ce009ddd00bda5d8a2a16b841f7e24efca9fa2
+  Deploying SupplyChain...
+  ... 0xb5d25363e4de0d3489a3628b0862596f86d717c3b2173b1984bdf408a95bf8b6
+  SupplyChain: 0x4b851e225fd954187a7dca9beb89338e04359a3f
+Saving successful migration to network...
+  ... 0x120c0e9304479f4d8ee916e9a509e45f17fb1014b3f308d51542dda1468d8196
+Saving artifacts...
+`# supply-chain
