@@ -2,18 +2,25 @@
 
 ### Libraries
 node v12.14.1
+
 truffle-assertions was used for testing events
+
 truffle-hdwallet-provider was used for being able to deploy using infura + truffle
+
 Solidity v0.5.16 (solc-js) was used to develop smart contracts
+
 truffle v5.4.8 (core: 5.4.8) was used to provide a development env, testing framework, and asset pipeline for Ethereum.
+
 web3.js v1.5.2 was used to interact with a ethereum node using HTTP, IPC or WebSocket.
 
 ### Running the tests
 1) Change directories into the project-6 folder
-2) In the terminal run  `truffle develop`
-3) The terminal will display `truffle(develop)>`
-4) at that prompt enter `test` 
-5) You will see it compile the contracts and then run the associated unit tests. There will be 10 passing tests.
+2) Launch Ganache `ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"`
+3) In another terminal run the next step commands
+4) Compile smart contracts `truffle compile`
+5) Migrate smart contracts `truffle migrate` 
+6) Test smart contracts `truffle test`
+7) You will see it compile the contracts and then run the associated unit tests. There will be 10 passing tests.
 
 ![truffle test](images/truffle_test.png)
 
