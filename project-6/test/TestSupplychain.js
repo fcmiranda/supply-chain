@@ -138,7 +138,7 @@ contract('SupplyChain', function(accounts) {
     // 5th Test
     it("Testing smart contract function buyItem() that allows a distributor to buy coffee", async() => {
         const supplyChain = await SupplyChain.deployed()
-        //await supplyChain.addDistributor(distributorID);
+        await supplyChain.addDistributor(distributorID);
         var e = await supplyChain.buyItem(upc, { from: distributorID, value: productPrice });
         // Retrieve the just now saved item from blockchain by calling function fetchItem()
         const res1 = await supplyChain.fetchItemBufferOne.call(upc)
@@ -179,7 +179,8 @@ contract('SupplyChain', function(accounts) {
 
     // 7th Test
     it("Testing smart contract function receiveItem() that allows a retailer to mark coffee received", async() => {
-        const supplyChain = await SupplyChain.deployed()
+        const supplyChain = await SupplyChain.deployed();
+        await supplyChain.addRetailer(retailerID);     
         var e = await supplyChain.receiveItem(upc, { from: retailerID });
         // Retrieve the just now saved item from blockchain by calling function fetchItem()
         const res1 = await supplyChain.fetchItemBufferOne.call(upc)
@@ -200,6 +201,7 @@ contract('SupplyChain', function(accounts) {
     // 8th Test
     it("Testing smart contract function purchaseItem() that allows a consumer to purchase coffee", async() => {
         const supplyChain = await SupplyChain.deployed();
+        await supplyChain.addConsumer(consumerID);
         var e = await supplyChain.purchaseItem(upc, { from: consumerID });
         // Retrieve the just now saved item from blockchain by calling function fetchItem()
         const res1 = await supplyChain.fetchItemBufferOne.call(upc)
